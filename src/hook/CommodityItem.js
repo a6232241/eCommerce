@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Card, Button } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
+import '../assets/scss/hook/commodityItem.scss'
 
 const CommodifyItem = (props) => {
   const [item, setItem] = useState('')
@@ -9,12 +10,11 @@ const CommodifyItem = (props) => {
   }, [props.item])
 
   return (
-    <Card>
+    <Card className="text-center" id="commodity-container">
       <Card.Img variant='top' src={item.img} />
       <Card.Body>
-        <Card.Title>{item.title}</Card.Title>
-        <Card.Text>{item.description}</Card.Text>
-        <Button variant='primary'>商品頁面</Button>
+        <Card.Title id="commodity-title">{item.title}</Card.Title>
+        <Card.Text id="commodity-price">${item.price}</Card.Text>
       </Card.Body>
     </Card>
   )

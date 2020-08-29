@@ -1,0 +1,10 @@
+#commodity-container:hover {
+  background-color: rgba(0, 0, 0, 0.125);
+  cursor: pointer;
+}
+#commodity-container > div #commodity-title {
+  font-size: 1.5rem;
+}
+#commodity-container > div #commodity-price {
+  font-size: 1.3rem;
+}
