@@ -12,7 +12,7 @@ class Header extends Component {
       <header>
         <Container fluid='md'>
           <Row>
-            <Col md='7' style={{ textAlign: 'left' }}>
+            <Col md='7' className='text-left'>
               <h1>CHENG 的服飾商店</h1>
             </Col>
             <Col></Col>

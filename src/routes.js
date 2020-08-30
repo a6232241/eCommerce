@@ -9,24 +9,27 @@ const routes = [
     component: Index,
     exact: true,
     Name: 'Index',
+    title: '主頁'
   },
   {
     path: '/apparel',
     component: Apparel,
     Name: 'Apparel',
+    title: '服飾',
     children: [
       {
-        path: '/apparel/:style?',
+        path: '/apparel/:style',
         component: Styles,
+        exact: true,
         Name: 'Styles',
-        children: [
-          {
-            path: '/apparel/:style?/:aid?',
-            component: CommodityContainer,
-            Name: 'CommodityContainer',
-          },
-        ],
+        title: '類型',
       },
+      {
+        path: '/apparel/:style/:aid',
+        component: CommodityContainer,
+        Name: 'CommodityContainer',
+        title: 'XXX'
+      }
     ],
   },
 ]

@@ -19,20 +19,24 @@ var routes = [{
   path: '/',
   component: _Index["default"],
   exact: true,
-  Name: 'Index'
+  Name: 'Index',
+  title: '主頁'
 }, {
   path: '/apparel',
   component: _Apparel["default"],
   Name: 'Apparel',
+  title: '服飾',
   children: [{
-    path: '/apparel/:style?',
+    path: '/apparel/:style',
     component: _Styles["default"],
+    exact: true,
     Name: 'Styles',
-    children: [{
-      path: '/apparel/:style?/:aid?',
-      component: _CommodityContainer["default"],
-      Name: 'CommodityContainer'
-    }]
+    title: '類型'
+  }, {
+    path: '/apparel/:style/:aid',
+    component: _CommodityContainer["default"],
+    Name: 'CommodityContainer',
+    title: 'XXX'
   }]
 }];
 var _default = routes;

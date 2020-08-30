@@ -7,8 +7,10 @@ class CommodityList extends Component {
     super(props)
     this.state = {
       list: [
-        { aid: '1', img: '#', title: '1', price: '10' },
-        { aid: '2', img: '#', title: '2', price: '20' }
+        { aid: '1', img: '#', title: '1', price: '10', style: 'coat' },
+        { aid: '2', img: '#', title: '2', price: '20', style: 'coat' },
+        { aid: '1', img: '#', title: '1', price: '10', style: 'pants' },
+        { aid: '2', img: '#', title: '2', price: '20', style: 'accessories' },
       ],
     }
     this.renderList = this.renderList.bind(this)
@@ -26,13 +28,17 @@ class CommodityList extends Component {
   }
 
   render() {
-    
     return (
       <main>
         <Container fluid='md'>
           <Row>
-            {this.renderList()}
+            <Col>
+              <h3 className='text-right'>
+                {this.props.style === undefined ? '推薦' : this.props.style}
+              </h3>
+            </Col>
           </Row>
+          <Row>{this.renderList()}</Row>
         </Container>
       </main>
     )

@@ -5,7 +5,7 @@ class CommodityContainer extends Component {
   // constructor(props) {
   //   super(props)
   // }
-  
+
   render() {
     return (
       <main>
@@ -13,11 +13,11 @@ class CommodityContainer extends Component {
           <Row>
             <Col>
               {/* <image src={'#'}></image> */}
-              <h1>IMage</h1>
+              <h1>imageUrl</h1>
             </Col>
             <Col>
-              <h1>XX</h1>
-              <p>aaa</p>
+              <h1>title</h1>
+              <p>price</p>
             </Col>
           </Row>
         </Container>
