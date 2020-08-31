@@ -19,7 +19,7 @@ class CommodityList extends Component {
   renderList() {
     let items = this.state.list.map((item, index) => {
       return (
-        <Col md='4' xs='12' key={index}>
+        <Col md='3' xs='12' key={index}>
           <CommodityItem item={item} />
         </Col>
       )

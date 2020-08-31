@@ -1,7 +1,11 @@
 #commodity-container {
   &:hover {
-    background-color: rgba(0, 0, 0, 0.125);
+    // background-color: rgba(0, 0, 0, 0.125);
+    border-color: #000;
     cursor: pointer;
+  }
+  &:active {
+    border-color: #fff;
   }
 
   & > div {

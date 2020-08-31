@@ -5,7 +5,7 @@ import '../assets/scss/hook/commodityItem.scss'
 
 const CommodifyItem = (props) => {
   const [item, setItem] = useState('')
-
+  
   useEffect(() => {
     setItem(props.item)
   }, [props.item])
