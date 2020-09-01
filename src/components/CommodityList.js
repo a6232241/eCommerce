@@ -5,26 +5,34 @@ import CommodityItem from '../hook/CommodityItem'
 class CommodityList extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      list: [
-        { aid: '1', img: '#', title: '1', price: '10', style: 'coat' },
-        { aid: '2', img: '#', title: '2', price: '20', style: 'coat' },
-        { aid: '1', img: '#', title: '1', price: '10', style: 'pants' },
-        { aid: '2', img: '#', title: '2', price: '20', style: 'accessories' },
-      ],
-    }
-    this.renderList = this.renderList.bind(this)
+    // this.state = {
+    //   list: [],
+    // }
+    // this.renderList = this.renderList.bind(this)
   }
 
+  // commponentDidUpdate(prevProps, prevState, snapshot) {
+  //   if(this.props.list.length() !== 0) {
+  //     console.log(this.props)
+  //   }
+  // }
+
+  // componentDidMount() {
+  //   console.log(this.props)
+  //   this.setState({ list: this.props.list })
+  // }
+
   renderList() {
-    let items = this.state.list.map((item, index) => {
-      return (
-        <Col md='3' xs='12' key={index}>
-          <CommodityItem item={item} />
-        </Col>
-      )
-    })
-    return items
+    if (this.props.list.length !== 0) {
+      let items = this.props.list.map((item, index) => {
+        return (
+          <Col md='3' xs='12' key={index}>
+            <CommodityItem item={item} />
+          </Col>
+        )
+      })
+      return items
+    }
   }
 
   render() {
