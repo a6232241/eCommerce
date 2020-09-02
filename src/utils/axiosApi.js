@@ -23,12 +23,12 @@ export default {
     return resData
   },
   // 取得商品細節
-  async getCommodity(data) {
+  async getCommodityItem(data) {
     let resData = await userRequest
-      .post('/video', data)
+      .post('/getCommodityItem', data)
       .then((res) => {
-        console.log(`取得影片 ${res.data.message}`)
-        return res.data.data[0]
+        console.log(`取得商品資訊 ${res.data.message}`)
+        return res.data.data
       })
       .catch(resError)
     return resData

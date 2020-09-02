@@ -32,6 +32,8 @@ class CommodityList extends Component {
         )
       })
       return items
+    } else {
+      return
     }
   }
 

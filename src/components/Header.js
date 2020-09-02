@@ -12,7 +12,7 @@ class Header extends Component {
       <header>
         <Container fluid='md'>
           <Row>
-            <Col md='7' className='text-left'>
+            <Col md='7' xs='12' className='text-md-left text-center'>
               <h1>CHENG 的服飾商店</h1>
             </Col>
             <Col></Col>
