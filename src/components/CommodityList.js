@@ -3,24 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 import CommodityItem from '../hook/CommodityItem'
 
 class CommodityList extends Component {
-  constructor(props) {
-    super(props)
-    // this.state = {
-    //   list: [],
-    // }
-    // this.renderList = this.renderList.bind(this)
-  }
-
-  // commponentDidUpdate(prevProps, prevState, snapshot) {
-  //   if(this.props.list.length() !== 0) {
-  //     console.log(this.props)
-  //   }
-  // }
-
-  // componentDidMount() {
-  //   console.log(this.props)
-  //   this.setState({ list: this.props.list })
-  // }
 
   renderList() {
     if (this.props.list.length !== 0) {

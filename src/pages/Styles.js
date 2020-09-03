@@ -20,7 +20,7 @@ const Styles = (props) => {
     resData.then((data) => {
       setCommodityList(data)
     })
-  }, [])
+  }, [paramsUrl])
 
   return (
     <div>

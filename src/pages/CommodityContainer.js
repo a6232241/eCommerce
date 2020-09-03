@@ -34,8 +34,9 @@ class CommodityContainer extends Component {
     return resData
   }
 
-  // @params String 傳入以字串表示的 Array
-  renderButton(data) {
+  // @params String 需要取值得變數名
+  renderButton(name) {
+    let data = this.state.container[name]
     if (data !== undefined) {
       let array = data.split(',')
       let items = array.map((item, index) => {
@@ -99,7 +100,7 @@ class CommodityContainer extends Component {
                 value={this.state.colorVal}
                 onChange={this.changeColorVal}
               >
-                {this.renderButton(this.state.container.color)}
+                {this.renderButton('color')}
               </ToggleButtonGroup>
               <h6>尺寸</h6>
               <ToggleButtonGroup
@@ -108,18 +109,22 @@ class CommodityContainer extends Component {
                 value={this.state.sizeVal}
                 onChange={this.changeSizeVal}
               >
-                {this.renderButton(this.state.container.size)}
+                {this.renderButton('size')}
               </ToggleButtonGroup>
               <h6>數量</h6>
-              <hr />
+              
               <Button variant='outline-danger' className='ml-2' size='lg'>
-                購買
+                直接購買
               </Button>
               <Button variant='outline-warning' className='ml-2' size='lg'>
                 放入購物車
               </Button>
             </Col>
           </Row>
+          <hr />
+        </Container>
+        <Container>
+          <h2>詳細資訊</h2>
         </Container>
       </main>
     )
