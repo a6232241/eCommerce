@@ -1,7 +1,7 @@
 import Index from './pages/Index'
 import Apparel from './pages/Apparel'
 import Styles from './pages/Styles'
-import CommodityContainer from './pages/CommodityContainer'
+import CommodityPage from './pages/CommodityPage'
 
 const routes = [
   {
@@ -26,8 +26,8 @@ const routes = [
       },
       {
         path: '/apparel/:style/:aid',
-        component: CommodityContainer,
-        Name: 'CommodityContainer',
+        component: CommodityPage,
+        Name: 'CommodityPage',
         title: 'XXX'
       }
     ],

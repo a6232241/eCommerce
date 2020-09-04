@@ -33,4 +33,37 @@ export default {
       .catch(resError)
     return resData
   },
+  // 生成使用者的 UUID
+  async generateUUID() {
+    let resData = await userRequest
+      .get('/generateUUID')
+      .then((res) => {
+        console.log(`${res.data.message}`)
+        return res.data.data
+      })
+      .catch(resError)
+    return resData
+  },
+  // 取得 UUID 中的購物車資料
+  async getUUIDdata(data) {
+    let resData = await userRequest
+      .post('/getUUIDdata', data)
+      .then((res) => {
+        console.log(`${res.data.message}`)
+        return res.data.data
+      })
+      .catch(resError)
+    return resData
+  },
+  // 將新增的指定商品加入對應的 UUID
+  async addUUIDdata(data) {
+    let resData = await userRequest
+      .post('/addUUIDdata', data)
+      .then((res) => {
+        console.log(`${res.data.message}`)
+        return res.data.data
+      })
+      .catch(resError)
+    return resData
+  },
 }

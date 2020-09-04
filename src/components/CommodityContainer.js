@@ -7,36 +7,28 @@ import {
   ToggleButtonGroup,
   ToggleButton,
   Button,
+  InputGroup,
 } from 'react-bootstrap'
-import axiosApi from '../utils/axiosApi'
+import AddToShopping from '../hook/AddToShopping'
 
 class CommodityContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      paramsUrl: this.props.match.params,
-      container: [],
       colorVal: '',
       sizeVal: '',
+      amount: 1,
     }
-    this.handleCommodityContainer = this.handleCommodityContainer.bind(this)
+
     this.renderButton = this.renderButton.bind(this)
     this.changeColorVal = this.changeColorVal.bind(this)
     this.changeSizeVal = this.changeSizeVal.bind(this)
-  }
-
-  async handleCommodityContainer() {
-    let formData = new FormData()
-    formData.append('style', this.state.paramsUrl.style)
-    formData.append('aid', this.state.paramsUrl.aid)
-
-    let resData = await axiosApi.getCommodityItem(formData)
-    return resData
+    this.changeAmount = this.changeAmount.bind(this)
   }
 
   // @params String 需要取值得變數名
   renderButton(name) {
-    let data = this.state.container[name]
+    let data = this.props.container[name]
     if (data !== undefined) {
       let array = data.split(',')
       let items = array.map((item, index) => {
@@ -65,14 +57,8 @@ class CommodityContainer extends Component {
     this.setState({ sizeVal: data })
   }
 
-  componentDidMount() {
-    let resData = this.handleCommodityContainer()
-    resData.then((data) => {
-      this.setState({
-        paramsUrl: this.props.match.params,
-        container: data[0],
-      })
-    })
+  changeAmount(e) {
+    this.setState({ amount: parseInt(e.target.value.replace(/\D/, '')) })
   }
 
   render() {
@@ -87,12 +73,12 @@ class CommodityContainer extends Component {
             >
               <Image
                 style={{ margin: 'auto' }}
-                src={`http://localhost:8081${this.state.container.imgPath}`}
+                src={`http://localhost:8081${this.props.container.imgPath}`}
               ></Image>
             </Col>
             <Col className='text-right'>
-              <h2>{this.state.container.title}</h2>
-              <h3>NT$ {this.state.container.price}</h3>
+              <h2>{this.props.container.title}</h2>
+              <h3>NT$ {this.props.container.price}</h3>
               <h6>顏色</h6>
               <ToggleButtonGroup
                 type='radio'
@@ -112,19 +98,31 @@ class CommodityContainer extends Component {
                 {this.renderButton('size')}
               </ToggleButtonGroup>
               <h6>數量</h6>
-              
+              <InputGroup className='justify-content-md-end mb-3'>
+                <input
+                  type='number'
+                  min={1}
+                  max={99}
+                  value={this.state.amount}
+                  onChange={this.changeAmount}
+                ></input>
+              </InputGroup>
               <Button variant='outline-danger' className='ml-2' size='lg'>
-                直接購買
+                前往結帳
               </Button>
-              <Button variant='outline-warning' className='ml-2' size='lg'>
-                放入購物車
-              </Button>
+              <AddToShopping shopping={this.state} />
             </Col>
           </Row>
           <hr />
         </Container>
         <Container>
           <h2>詳細資訊</h2>
+          <Row>
+            <Image
+              style={{ margin: 'auto' }}
+              src={`http://localhost:8081${this.props.container.imgPath}`}
+            ></Image>
+          </Row>
         </Container>
       </main>
     )
