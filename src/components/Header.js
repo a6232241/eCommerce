@@ -54,7 +54,7 @@ class Header extends Component {
               <h1>CHENG 的服飾商店</h1>
             </Col>
             <Col className='text-md-right  text-center'>
-              <ShoppingCart shopping={this.state.uuidData} />
+              <ShoppingCart shoppingAll={this.state.uuidData} />
             </Col>
           </Row>
           <Menu />

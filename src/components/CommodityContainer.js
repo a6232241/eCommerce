@@ -110,7 +110,7 @@ class CommodityContainer extends Component {
               <Button variant='outline-danger' className='ml-2' size='lg'>
                 前往結帳
               </Button>
-              <AddToShopping shopping={this.state} />
+              <AddToShopping shopping={this.state} aid={this.props.aid} />
             </Col>
           </Row>
           <hr />
