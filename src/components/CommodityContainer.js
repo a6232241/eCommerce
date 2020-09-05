@@ -73,7 +73,7 @@ class CommodityContainer extends Component {
             >
               <Image
                 style={{ margin: 'auto' }}
-                src={`http://localhost:8081${this.props.container.imgPath}`}
+                src={`https://e-commerce-plat-cms.herokuapp.com${this.props.container.imgPath}`}
               ></Image>
             </Col>
             <Col className='text-right'>
@@ -120,7 +120,7 @@ class CommodityContainer extends Component {
           <Row>
             <Image
               style={{ margin: 'auto' }}
-              src={`http://localhost:8081${this.props.container.imgPath}`}
+              src={`https://e-commerce-plat-cms.herokuapp.com${this.props.container.imgPath}`}
             ></Image>
           </Row>
         </Container>

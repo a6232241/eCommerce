@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const userRequest = axios.create({
   withCredentials: true,
-  baseURL: 'http://localhost:8081',
+  baseURL: 'https://e-commerce-plat-cms.herokuapp.com',
   headers: { 'content-type': 'multipart/form-data' },
 })
 

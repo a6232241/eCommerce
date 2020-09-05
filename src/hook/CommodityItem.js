@@ -16,7 +16,7 @@ const CommodifyItem = (props) => {
       style={{ textDecoration: 'none', color: '#000' }}
     >
       <Card className='text-center my-3' id='commodity-container'>
-        <Card.Img variant='top' src={`http://localhost:8081${item.imgPath}`} />
+        <Card.Img variant='top' src={`https://e-commerce-plat-cms.herokuapp.com${item.imgPath}`} />
         <Card.Body>
           <Card.Title id='commodity-title'>{item.title}</Card.Title>
           <Card.Text id='commodity-price'>${item.price}</Card.Text>
