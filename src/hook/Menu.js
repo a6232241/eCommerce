@@ -1,5 +1,6 @@
 import React from 'react'
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Menu = (props) => {
   // constructor(props) {
@@ -13,10 +14,19 @@ const Menu = (props) => {
       >
         <Nav.Link href='/'>主頁</Nav.Link>
         <NavDropdown title='類型' id='basic-nav-dropdown'>
-          <NavDropdown.Item href='/apparel/coat'>上衣</NavDropdown.Item>
-          <NavDropdown.Item href='/apparel/pants'>褲子</NavDropdown.Item>
+          <Link to={{ pathname: `/apparel/coat` }} className='dropdown-item'>
+            上衣
+          </Link>
+          <Link to={{ pathname: `/apparel/pants` }} className='dropdown-item'>
+            褲子
+          </Link>
           <NavDropdown.Divider />
-          <NavDropdown.Item href='/apparel/accessories'>配件</NavDropdown.Item>
+          <Link
+            to={{ pathname: `/apparel/accessories` }}
+            className='dropdown-item'
+          >
+            配件
+          </Link>
         </NavDropdown>
       </Nav>
     </Navbar>

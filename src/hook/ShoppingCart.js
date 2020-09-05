@@ -11,7 +11,7 @@ const ShoppingCart = (props) => {
   const handleShow = () => setShow(true)
 
   const renderList = () => {
-    if (props.shoppingAll.length !== 0) {
+    if (props && props.shoppingAll && props.shoppingAll.length > 0) {
       let items = props.shoppingAll.map((item, index) => {
         let shopping = JSON.parse(item['user'])
         totalPrice += shopping.amount * item.price

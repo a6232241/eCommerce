@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
+import {withRouter} from 'react-router-dom';
 import axiosApi from '../utils/axiosApi'
 import storageApi from '../utils/storageApi'
 
@@ -14,7 +15,8 @@ const AddToShopping = (props) => {
       formData.append('shopping', JSON.stringify(props.shopping))
       await axiosApi.addUUIDdata(formData)
       alert('加入購物車')
-      window.location.reload()
+      
+      props.history.push(window.location.pathname)
     }
   }
 
@@ -30,4 +32,4 @@ const AddToShopping = (props) => {
   )
 }
 
-export default AddToShopping
+export default withRouter(AddToShopping)

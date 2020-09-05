@@ -5,7 +5,7 @@ import CommodityItem from '../hook/CommodityItem'
 class CommodityList extends Component {
 
   renderList() {
-    if (this.props.list.length !== 0) {
+    if (this.props && this.props.list && this.props.list.length > 0) {
       let items = this.props.list.map((item, index) => {
         return (
           <Col md='3' xs='12' key={index}>
