@@ -2,7 +2,8 @@ import axios from 'axios'
 
 const userRequest = axios.create({
   withCredentials: true,
-  baseURL: 'https://e-commerce-plat-cms.herokuapp.com',
+  // baseURL: 'https://e-commerce-plat-cms.herokuapp.com',
+  baseURL: 'http://localhost:8081',
   headers: { 'content-type': 'multipart/form-data' },
 })
 
@@ -66,4 +67,15 @@ export default {
       .catch(resError)
     return resData
   },
+  // 進行結帳
+  async getShopCheckoutPage(data) {
+    let resData = await userRequest
+      .post('/shopCheckout', data)
+      .then((res) => {
+        console.log(`${res.data.message}`)
+        return res.data.data
+      })
+      .catch(resError)
+    return resData
+  }
 }

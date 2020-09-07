@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button, Modal, Row, Col } from 'react-bootstrap'
 import '../assets/scss/hook/shoppingCart.scss'
 import { BsBagFill } from 'react-icons/bs'
+import ShopCheckout from './ShopCheckout'
 
 const ShoppingCart = (props) => {
   let [show, setShow] = useState(false)
@@ -65,13 +66,7 @@ const ShoppingCart = (props) => {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            variant='outline-danger'
-            className='ml-2'
-            onClick={handleClose}
-          >
-            前往結帳
-          </Button>
+          <ShopCheckout />
           <Button
             variant='outline-warning'
             className='ml-2'

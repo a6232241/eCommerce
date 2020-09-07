@@ -11,7 +11,6 @@ const AddToShopping = (props) => {
     }else {
       let formData = new FormData()
       formData.append('uuid', storageApi.getStorage('uuid'))
-      formData.append('aid', props.aid)
       formData.append('shopping', JSON.stringify(props.shopping))
       await axiosApi.addUUIDdata(formData)
       alert('加入購物車')

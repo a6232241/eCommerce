@@ -6,19 +6,22 @@ import {
   Image,
   ToggleButtonGroup,
   ToggleButton,
-  Button,
   InputGroup,
 } from 'react-bootstrap'
 import AddToShopping from '../hook/AddToShopping'
+import ShopCheckout from '../hook/ShopCheckout'
 
 class CommodityContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      aid: this.props.aid,
       colorVal: '',
       sizeVal: '',
       amount: 1,
     }
+    // this.backendUrl = 'https://e-commerce-plat-cms.herokuapp.com'
+    this.backendUrl = 'http://localhost:8081'
 
     this.renderButton = this.renderButton.bind(this)
     this.changeColorVal = this.changeColorVal.bind(this)
@@ -73,7 +76,7 @@ class CommodityContainer extends Component {
             >
               <Image
                 style={{ margin: 'auto' }}
-                src={`https://e-commerce-plat-cms.herokuapp.com${this.props.container.imgPath}`}
+                src={`${this.backendUrl}${this.props.container.imgPath}`}
               ></Image>
             </Col>
             <Col className='text-right'>
@@ -107,9 +110,7 @@ class CommodityContainer extends Component {
                   onChange={this.changeAmount}
                 ></input>
               </InputGroup>
-              <Button variant='outline-danger' className='ml-2' size='lg'>
-                前往結帳
-              </Button>
+              <ShopCheckout size={'lg'} />
               <AddToShopping shopping={this.state} aid={this.props.aid} />
             </Col>
           </Row>
@@ -120,7 +121,7 @@ class CommodityContainer extends Component {
           <Row>
             <Image
               style={{ margin: 'auto' }}
-              src={`https://e-commerce-plat-cms.herokuapp.com${this.props.container.imgPath}`}
+              src={`${this.backendUrl}${this.props.container.imgPath}`}
             ></Image>
           </Row>
         </Container>
