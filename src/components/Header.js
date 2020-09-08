@@ -9,10 +9,10 @@ class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      uuidData: [],
+      shoppingData: [],
     }
     this.handleGenerateUUID = this.handleGenerateUUID.bind(this)
-    this.handleGetUUIDdata = this.handleGetUUIDdata.bind(this)
+    this.handleGetShoppingData = this.handleGetShoppingData.bind(this)
   }
 
   async handleGenerateUUID() {
@@ -20,8 +20,8 @@ class Header extends Component {
     return resData
   }
 
-  async handleGetUUIDdata(formData) {
-    let resData = await axiosApi.getUUIDdata(formData)
+  async handleGetShoppingData(formData) {
+    let resData = await axiosApi.getShoppingData(formData)
     return resData
   }
 
@@ -38,9 +38,9 @@ class Header extends Component {
       let formData = new FormData()
       formData.append('uuid', uuid)
 
-      let resData = this.handleGetUUIDdata(formData)
+      let resData = this.handleGetShoppingData(formData)
       resData.then((data) => {
-        this.setState({ uuidData: data })
+        this.setState({ shoppingData: data })
       })
     }
   }
@@ -54,7 +54,7 @@ class Header extends Component {
               <h1>CHENG 的服飾商店</h1>
             </Col>
             <Col className='text-md-right text-center'>
-              <ShoppingCart shoppingAll={this.state.uuidData} />
+              <ShoppingCart shoppingAll={this.state.shoppingData} />
             </Col>
           </Row>
           <Menu />

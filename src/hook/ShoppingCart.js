@@ -14,16 +14,15 @@ const ShoppingCart = (props) => {
   const renderList = () => {
     if (props && props.shoppingAll && props.shoppingAll.length > 0) {
       let items = props.shoppingAll.map((item, index) => {
-        let shopping = JSON.parse(item['user'])
-        totalPrice += shopping.amount * item.price
+        totalPrice += item.totalAmount
         return (
           <Row key={index}>
             <Col>{index}</Col>
             <Col md={5}>{item.title}</Col>
-            <Col>{shopping.colorVal}</Col>
-            <Col>{shopping.sizeVal}</Col>
-            <Col>{shopping.amount}</Col>
-            <Col>{shopping.amount * item.price}</Col>
+            <Col>{item.color}</Col>
+            <Col>{item.size}</Col>
+            <Col>{item.amount}</Col>
+            <Col>{item.totalAmount}</Col>
           </Row>
         )
       })
@@ -62,7 +61,7 @@ const ShoppingCart = (props) => {
           <hr />
           <Row>
             <Col>總金額</Col>
-            <Col md={1}>{totalPrice}</Col>
+            <Col md={2}>{totalPrice}</Col>
           </Row>
         </Modal.Body>
         <Modal.Footer>

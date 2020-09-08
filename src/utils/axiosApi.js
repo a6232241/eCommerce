@@ -7,6 +7,11 @@ const userRequest = axios.create({
   headers: { 'content-type': 'multipart/form-data' },
 })
 
+const resSuccess = (res) => {
+  console.log(`${res.data.message}`)
+  return res.data.data
+}
+
 const resError = (err) => {
   console.log(err.data)
 }
@@ -16,10 +21,7 @@ export default {
   async getCommodityList() {
     let resData = await userRequest
       .get('/getCommodityList')
-      .then((res) => {
-        console.log(`取得商品列表 ${res.data.message}`)
-        return res.data.data
-      })
+      .then(resSuccess)
       .catch(resError)
     return resData
   },
@@ -27,10 +29,7 @@ export default {
   async getCommodityItem(data) {
     let resData = await userRequest
       .post('/getCommodityItem', data)
-      .then((res) => {
-        console.log(`取得商品資訊 ${res.data.message}`)
-        return res.data.data
-      })
+      .then(resSuccess)
       .catch(resError)
     return resData
   },
@@ -38,32 +37,23 @@ export default {
   async generateUUID() {
     let resData = await userRequest
       .get('/generateUUID')
-      .then((res) => {
-        console.log(`${res.data.message}`)
-        return res.data.data
-      })
+      .then(resSuccess)
       .catch(resError)
     return resData
   },
   // 取得 UUID 中的購物車資料
-  async getUUIDdata(data) {
+  async getShoppingData(data) {
     let resData = await userRequest
-      .post('/getUUIDdata', data)
-      .then((res) => {
-        console.log(`${res.data.message}`)
-        return res.data.data
-      })
+      .post('/getShoppingData', data)
+      .then(resSuccess)
       .catch(resError)
     return resData
   },
   // 將新增的指定商品加入對應的 UUID
-  async addUUIDdata(data) {
+  async addShoppingData(data) {
     let resData = await userRequest
-      .post('/addUUIDdata', data)
-      .then((res) => {
-        console.log(`${res.data.message}`)
-        return res.data.data
-      })
+      .post('/addShoppingData', data)
+      .then(resSuccess)
       .catch(resError)
     return resData
   },
@@ -71,11 +61,8 @@ export default {
   async getShopCheckoutPage(data) {
     let resData = await userRequest
       .post('/shopCheckout', data)
-      .then((res) => {
-        console.log(`${res.data.message}`)
-        return res.data.data
-      })
+      .then(resSuccess)
       .catch(resError)
     return resData
-  }
+  },
 }
