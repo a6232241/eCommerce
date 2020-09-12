@@ -6,11 +6,16 @@ import storageApi from '../utils/storageApi'
 
 const ShopCheckout = (props) => {
   const handleShopCheckout = async () => {
-    let formData = new FormData()
-    formData.append('uuid', storageApi.getStorage('uuid'))
-    await axiosApi.getShopCheckoutPage(formData)
-
-    // props.history.push(window.location.pathname)
+    if(props.onClick) props.onClick()
+    window.location.href = `http://localhost:8081/paymentaction?uuid=${storageApi.getStorage('uuid')}`
+    // let formData = new FormData()
+    // formData.append('uuid', storageApi.getStorage('uuid'))
+    // let resData = await axiosApi.getPaymentAction(formData)
+    // let parser = new DOMParser()
+    // let doc = parser.parseFromString(resData, 'application/xml')
+    // let docNodes = doc.childNodes[0].childNodes
+    // console.log(resData)
+    // props.changeDom(docNodes)
   }
 
   return (

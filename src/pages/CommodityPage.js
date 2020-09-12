@@ -8,16 +8,16 @@ const CommodityPage = (props) => {
 
   let [container, setContainer] = useState('')
 
-  const handleContainer = async () => {
-    let formData = new FormData()
-    formData.append('style', paramsUrl.style)
-    formData.append('aid', paramsUrl.aid)
-
-    let resData = await axiosApi.getCommodityItem(formData)
-    return resData
-  }
-
   useEffect(() => {
+    const handleContainer = async () => {
+      let formData = new FormData()
+      formData.append('style', paramsUrl.style)
+      formData.append('aid', paramsUrl.aid)
+
+      let resData = await axiosApi.getCommodityItem(formData)
+      return resData
+    }
+
     let resData = handleContainer()
     resData.then((data) => {
       setContainer(data[0])

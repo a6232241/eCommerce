@@ -10,8 +10,9 @@ import {
 } from 'react-bootstrap'
 import AddToShopping from '../hook/AddToShopping'
 import ShopCheckout from '../hook/ShopCheckout'
+import backEndUrl from '../utils/url'
 
-class CommodityContainer extends Component {
+export default class CommodityContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -20,8 +21,6 @@ class CommodityContainer extends Component {
       sizeVal: '',
       amount: 1,
     }
-    // this.backendUrl = 'https://e-commerce-plat-cms.herokuapp.com'
-    this.backendUrl = 'http://localhost:8081'
 
     this.renderButton = this.renderButton.bind(this)
     this.changeColorVal = this.changeColorVal.bind(this)
@@ -76,7 +75,7 @@ class CommodityContainer extends Component {
             >
               <Image
                 style={{ margin: 'auto' }}
-                src={`${this.backendUrl}${this.props.container.imgPath}`}
+                src={`${backEndUrl}${this.props.container.imgPath}`}
               ></Image>
             </Col>
             <Col className='text-right'>
@@ -121,7 +120,7 @@ class CommodityContainer extends Component {
           <Row>
             <Image
               style={{ margin: 'auto' }}
-              src={`${this.backendUrl}${this.props.container.imgPath}`}
+              src={`${backEndUrl}${this.props.container.imgPath}`}
             ></Image>
           </Row>
         </Container>
@@ -129,5 +128,3 @@ class CommodityContainer extends Component {
     )
   }
 }
-
-export default CommodityContainer

@@ -9,7 +9,7 @@ const routes = [
     component: Index,
     exact: true,
     Name: 'Index',
-    title: '主頁'
+    title: '主頁',
   },
   {
     path: '/apparel',
@@ -28,8 +28,8 @@ const routes = [
         path: '/apparel/:style/:aid',
         component: CommodityPage,
         Name: 'CommodityPage',
-        title: 'XXX'
-      }
+        title: 'XXX',
+      },
     ],
   },
 ]

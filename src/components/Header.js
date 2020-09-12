@@ -5,7 +5,7 @@ import ShoppingCart from '../hook/ShoppingCart'
 import storageApi from '../utils/storageApi'
 import axiosApi from '../utils/axiosApi'
 
-class Header extends Component {
+export default class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -64,5 +64,3 @@ class Header extends Component {
     )
   }
 }
-
-export default Header

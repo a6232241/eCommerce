@@ -6,6 +6,7 @@ import ShopCheckout from './ShopCheckout'
 
 const ShoppingCart = (props) => {
   let [show, setShow] = useState(false)
+  let [payment, setPayment] = useState('')
   let totalPrice = 0
 
   const handleClose = () => setShow(false)
@@ -30,7 +31,7 @@ const ShoppingCart = (props) => {
     }
   }
 
-  return (
+  return payment === '' ? (
     <section>
       <BsBagFill
         id='shoppingCart'
@@ -65,7 +66,7 @@ const ShoppingCart = (props) => {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <ShopCheckout />
+          <ShopCheckout changeDom={setPayment} onClick={handleClose} />
           <Button
             variant='outline-warning'
             className='ml-2'
@@ -76,6 +77,10 @@ const ShoppingCart = (props) => {
         </Modal.Footer>
       </Modal>
     </section>
+  ) : (
+    <div>
+      {/* {React.createElement(payment, {}, null)} */}
+    </div>
   )
 }
 

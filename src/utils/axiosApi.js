@@ -1,9 +1,9 @@
 import axios from 'axios'
+import backEndUrl from '../utils/url'
 
 const userRequest = axios.create({
   withCredentials: true,
-  // baseURL: 'https://e-commerce-plat-cms.herokuapp.com',
-  baseURL: 'http://localhost:8081',
+  baseURL: backEndUrl,
   headers: { 'content-type': 'multipart/form-data' },
 })
 
@@ -58,9 +58,9 @@ export default {
     return resData
   },
   // 進行結帳
-  async getShopCheckoutPage(data) {
+  async getPaymentAction(data) {
     let resData = await userRequest
-      .post('/shopCheckout', data)
+      .post('/paymentaction', data)
       .then(resSuccess)
       .catch(resError)
     return resData

@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
-        <main className="pb-4">{renderRoutes(routes)}</main>
+        <main className='pb-4'>{renderRoutes(routes)}</main>
         <Footer />
       </div>
     )
