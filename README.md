@@ -1,68 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 電子商務(用綠界進行金流串接)
 
-## Available Scripts
+### 簡介
 
-In the project directory, you can run:
+利用 React 和 nodejs，串接綠界金流 SDK
 
-### `npm start`
+### 實體網站
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[前端](https://e-commerce-plat.herokuapp.com/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[後端](https://e-commerce-plat-cms.herokuapp.com/)
 
-### `npm test`
+### 參考
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[給初入JS框架新手的React.js入門 系列](https://ithelp.ithome.com.tw/users/20116826/ironman/2278)
 
-### `npm run build`
+[[React] 搭配 React Router 打造一個動態麵包屑（dynamic breadcrumb）](https://pjchender.blogspot.com/2018/11/react-react-router-dynamic-breadcrumb.html)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[綠界官方 SDK](https://github.com/ECPay/ECPayAIO_Node.js)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[Node.js-Backend見聞錄(28)：進階實作-關於金流](https://ithelp.ithome.com.tw/articles/10197489)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[[Day10] ECPay API 參數了解](https://ithelp.ithome.com.tw/articles/10220715)
 
-### `npm run eject`
+### 常用套件
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[react-bootstrap](https://react-bootstrap.github.io/utilities/transitions/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Koa](https://koa.bootcss.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[axios](https://github.com/axios/axios)
