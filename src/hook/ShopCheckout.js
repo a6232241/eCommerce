@@ -1,13 +1,14 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 // import {withRouter} from 'react-router-dom';
-import axiosApi from '../utils/axiosApi'
+// import axiosApi from '../utils/axiosApi'
 import storageApi from '../utils/storageApi'
+import backEndUrl from '../utils/url'
 
 const ShopCheckout = (props) => {
   const handleShopCheckout = async () => {
     if(props.onClick) props.onClick()
-    window.location.href = `http://localhost:8081/paymentaction?uuid=${storageApi.getStorage('uuid')}`
+    window.location.href = `${backEndUrl}/paymentaction?uuid=${storageApi.getStorage('uuid')}`
     // let formData = new FormData()
     // formData.append('uuid', storageApi.getStorage('uuid'))
     // let resData = await axiosApi.getPaymentAction(formData)
